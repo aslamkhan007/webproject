@@ -85,14 +85,10 @@ app.get("/logout", auth, async (req, res) => {
     //   return currenttoken.token !== req.token;
     // });
 
-    req.user.tokens =[];
-
- 
+    req.user.tokens = [];
 
     res.clearCookie("jwt");
     console.log("logout  is succssfuly");
-
-
 
     await req.user.save();
 
